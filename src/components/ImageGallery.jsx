@@ -12,6 +12,7 @@ import LeftNav from "src/components/controls/LeftNav";
 import RightNav from "src/components/controls/RightNav";
 import PlayPause from "src/components/controls/PlayPause";
 import SwipeWrapper from "src/components/SwipeWrapper";
+import Image from 'next/image';
 
 const screenChangeEvents = [
   "fullscreenchange",
@@ -1417,7 +1418,7 @@ class ImageGallery extends React.Component {
 
     return (
       <span className="image-gallery-thumbnail-inner">
-        <img
+        <Image
           className="image-gallery-thumbnail-image"
           src={item.thumbnail}
           height={item.thumbnailHeight}

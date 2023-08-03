@@ -1,17 +1,18 @@
-import React from "react";
-import { bool, func, string } from "prop-types";
+import Image from 'next/image';
+import { bool, func, string } from 'prop-types';
+import React from 'react';
 
 const defaultProps = {
-  description: "",
-  fullscreen: "",
+  description: '',
+  fullscreen: '',
   isFullscreen: false,
-  originalAlt: "",
-  originalHeight: "",
-  originalWidth: "",
-  originalTitle: "",
-  sizes: "",
-  srcSet: "",
-  loading: "eager",
+  originalAlt: '',
+  originalHeight: 0,
+  originalWidth: 0,
+  originalTitle: '',
+  sizes: '',
+  srcSet: '',
+  loading: 'eager',
 };
 
 const Item = React.memo((props) => {
@@ -27,18 +28,16 @@ const Item = React.memo((props) => {
     originalWidth,
     originalTitle,
     sizes,
-    srcSet,
     loading,
   } = { ...defaultProps, ...props };
   const itemSrc = isFullscreen ? fullscreen || original : original;
 
   return (
     <React.Fragment>
-      <img
+      <Image
         className="image-gallery-image"
         src={itemSrc}
         alt={originalAlt}
-        srcSet={srcSet}
         height={originalHeight}
         width={originalWidth}
         sizes={sizes}
@@ -54,7 +53,7 @@ const Item = React.memo((props) => {
   );
 });
 
-Item.displayName = "Item";
+Item.displayName = 'Item';
 
 Item.propTypes = {
   description: string,
@@ -64,8 +63,8 @@ Item.propTypes = {
   onImageError: func.isRequired,
   original: string.isRequired,
   originalAlt: string,
-  originalHeight: string,
-  originalWidth: string,
+  originalHeight: Number,
+  originalWidth: Number,
   originalTitle: string,
   sizes: string,
   srcSet: string,
