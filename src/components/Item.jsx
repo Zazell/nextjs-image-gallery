@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 import { bool, func, string } from "prop-types";
 
 const defaultProps = {
@@ -34,7 +35,7 @@ const Item = React.memo((props) => {
 
   return (
     <React.Fragment>
-      <img
+      <Image
         className="image-gallery-image"
         src={itemSrc}
         alt={originalAlt}
