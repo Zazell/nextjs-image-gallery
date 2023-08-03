@@ -81,6 +81,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "peerDependencies": {
+    "next": "^13.4.0",
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {}
